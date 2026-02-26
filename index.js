@@ -7,7 +7,6 @@ require("dotenv").config();
 const getImageAnalysis = require("./image-analysis");
 const getImageCreator = require("./imagecreator");
 const getTextGenerator = require("./textgeneration");
-const ChatBot = require("./chatbot");
 const storage = multer.memoryStorage();
 
 const upload = multer({ storage: storage });

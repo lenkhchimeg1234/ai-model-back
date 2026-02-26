@@ -3,9 +3,11 @@ const cors = require("cors");
 const multer = require("multer");
 require("dotenv").config();
 
+
 const getImageAnalysis = require("./image-analysis");
 const getImageCreator = require("./imagecreator");
 const getTextGenerator = require("./textgeneration");
+const ChatBot = require("./chatbot");
 const storage = multer.memoryStorage();
 
 const upload = multer({ storage: storage });
@@ -20,6 +22,7 @@ app.use(express.json());
 app.post("/analyze-image", upload.single("image"), getImageAnalysis);
 app.post("/create-image", getImageCreator);
 app.post("/generate-text", getTextGenerator);
+app.post("/Chat-Bot", ChatBot);
 
 // app.get("/", (req, res) => {
 //   res.json({ message: "Welcome to the Image Analysis API" });
